@@ -29,9 +29,12 @@ class Item extends HTMLElement {
   
     render() {
         this.shadowRoot.innerHTML = `
+        <li>
         <h1>${this.title}</h1>
         <p>${this.bio}</p>
-        <button>${this.state ? 'Completada' : 'Pendiente'}</button>
+        <p>${!this.state ? 'Pendiente' : 'Completada'}</p>
+        <input type="checkbox">
+        </li>
   
       `;
         this.shadowRoot.querySelector('button').addEventListener('click', () => this.stateValue());
