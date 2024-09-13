@@ -20,3 +20,7 @@ public
 |  |  indexAbuelo.js
 index.html
 index.css
+
+En el abuelo: class AppContainer / constructor(){} / connectedCallback(){} / render(){} / customElements.define('app-container',AppContainer)
+
+el super(); // inicializar elemtnos como el HTML que heredan de otrad clases y así poder usarlos / habilitarlo
