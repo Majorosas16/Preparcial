@@ -32,3 +32,49 @@ Componentes con data: https://github.com/LeiderCalvo/DCA/blob/08_webComponentsWi
 Componentes boton (counter): https://github.com/LeiderCalvo/DCA/tree/07_webComponentsActionsButtons
 repo Nikol entendible: https://github.com/NikSala10/Preparcial1/tree/main/public/src/components
 
+-------------------------------------
+guia de como hacerlo:
+
+// product-card.js
+import './styles.css';
+
+class ProductCard extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+        this.shadowRoot.querySelector('button').addEventListener('click', () => {
+            this.showDetail();
+        });
+    }
+
+    render() {
+        const title = this.getAttribute('title') || 'Product Title';
+        const description = this.getAttribute('description') || 'Product Description';
+
+        this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="./styles.css">
+            <div class="card">
+                <h3>${title}</h3>
+                <p>${description}</p>
+                <button>Show Details</button>
+            </div>
+        `;
+    }
+
+    showDetail() {
+        const event = new CustomEvent('show-detail', {
+            detail: {
+                title: this.getAttribute('title'),
+                description: this.getAttribute('description')
+            }
+        });
+        this.dispatchEvent(event);
+    }
+}
+
+customElements.define('product-card', ProductCard);
+
