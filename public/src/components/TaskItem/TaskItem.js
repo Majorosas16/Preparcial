@@ -15,31 +15,30 @@ class Item extends HTMLElement {
   
     attributeChangedCallback(propName, oldValue, newValue) {
       if (oldValue !== newValue) {
-        this[propName] = newValue;
+        this[propName] = propName === "state"? newValue === "true" : newValue ; //que llegue bien el prop de state  
         this.render();
       }
     }
 
     stateValue() {
-        if (this.state) {
-            this.state = !this.state;
-        }
+        this.state = !this.state;
         this.render();
     }
   
     render() {
         this.shadowRoot.innerHTML = `
         <li>
-        <h1>${this.title}</h1>
+        <h2>${this.title}</h2>
         <p>${this.bio}</p>
         <p>${!this.state ? 'Pendiente' : 'Completada'}</p>
-        <input type="checkbox">
+        <input type="checkbox" ${this.state ? "checked" : ""} class="task-checkbox"> 
         </li>
   
       `;
-        this.shadowRoot.querySelector('button').addEventListener('click', () => this.stateValue());
+        this.shadowRoot.querySelector('.task-checkbox').addEventListener('change', () => this.stateValue());
         
-     //El this.state entra en true porque pasó por le método stateValue()
+      //El this.state entra en true porque pasó por le método stateValue()
+      // El input type="checkbox" Va a permitir checkear y descheckear la tarea
     }
   }
   
