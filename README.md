@@ -30,5 +30,5 @@ LINKS DE REPOS
 Ejercicios de For each: https://github.com/pangar03/Repaso-quiz-1
 Componentes con data: https://github.com/LeiderCalvo/DCA/blob/08_webComponentsWithData/public/src/indexAbuelo2.js
 Componentes boton (counter): https://github.com/LeiderCalvo/DCA/tree/07_webComponentsActionsButtons
-repo Nikol entendible: 
+repo Nikol entendible: https://github.com/NikSala10/Preparcial1/tree/main/public/src/components
 
