@@ -1,5 +1,7 @@
 Keep in mind Majo
 
+Set-ExecutionPolicy -Scope CurrentUser unrestricted
+
 npm init -y
 npm install serve -D
 start = "serve"
