@@ -24,3 +24,8 @@ index.css
 En el abuelo: class AppContainer / constructor(){} / connectedCallback(){} / render(){} / customElements.define('app-container',AppContainer)
 
 el super(); // inicializar elemtnos como el HTML que heredan de otrad clases y así poder usarlos / habilitarlo
+
+LINKS DE REPOS
+
+Componentes con data: https://github.com/LeiderCalvo/DCA/blob/08_webComponentsWithData/public/src/indexAbuelo2.js
+
